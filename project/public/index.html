@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Transcribe</title>
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <h1>Transcribe</h1>
+  <div>
+    <label>API Key <input type="text" id="apiKey" /></label>
+  </div>
+  <div>
+    <input type="file" id="audio" accept="audio/*" />
+  </div>
+  <div>
+    <label>Format
+      <select id="format">
+        <option value="md">Markdown</option>
+        <option value="txt">Text</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label>Model
+      <select id="model">
+        <option value="gpt-4o-transcribe">gpt-4o-transcribe</option>
+        <option value="gpt-4o-mini-transcribe">gpt-4o-mini-transcribe</option>
+        <option value="whisper-1">whisper-1</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label>Chunk minutes <span id="chunkLabel">5</span>
+      <input type="range" id="chunk" min="0.5" max="15" step="0.5" value="5" />
+    </label>
+  </div>
+  <button id="start">Start</button>
+  <pre id="log"></pre>
+  <div id="download"></div>
+</body>
+</html>
